@@ -97,12 +97,12 @@
   <repo name="curl" rev="curl-7_36_0-arsdk" forceBaseUrl="TRUE"/>
 
   <!-- External Repositories -->
-  <extrepo url="https://github.com/mavlink/mavlink.git" rev="1.0.11">
-    <postDownloadAction command="../mavlink/generator/mavgen.py ../libARMavlink/Build/common.xml -o ../mavlink/generated/include/mavlink --lang C"/>
+  <extrepo url="https://github.com/mavlink/mavlink.git" rev="master">
+    <postDownloadAction command="PYTHONPATH=../mavlink:$PYTHONPATH ../mavlink/pymavlink/tools/mavgen.py ../libARMavlink/Build/common.xml -o ../mavlink/generated/include/mavlink --lang C"/>
   </extrepo>
 
   <!-- External tar -->
-  <webfile url="https://www.openssl.org/source/openssl-1.0.2a.tar.gz" storePath="../openssl"/>
+  <webfile url="https://www.openssl.org/source/openssl-1.0.2b.tar.gz" storePath="../openssl"/>
 
   <!-- Prebuilt -->
   <webfile url="http://downloads.sourceforge.net/project/jmdns/jmdns/JmDNS%203.4.1/jmdns-3.4.1.tgz" storePath="../jmdns">
